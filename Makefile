@@ -1,3 +1,11 @@
-FILE=shell.c
+objects = shell.o
 
-default: run
+edit : $(objects)
+	cc -o edit $(objects)
+
+shell.o : header.h
+
+.PHONY : clean
+clean :
+	rm edit $(objects)
+        
